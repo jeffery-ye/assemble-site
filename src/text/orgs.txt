@@ -1,0 +1,16 @@
+actor
+actress
+amoeba
+cat
+dog
+tiger
+liger
+lion
+capybara
+Anteater
+Autocrat
+E. coli
+Prophet
+Sentient alien robot
+Blue tit
+Human being
