@@ -26,13 +26,9 @@ const Home = () => {
 
 const Generator = () => (
   <div class = "generatorText">
-    Generator
-    { generate() }
+    <h5>Prompt: The lessons we take from obstacles we encounter can be fundamental to later success. Recount a time when you faced a challenge, setback, or failure. How did it affect you, and what did you learn from the experience?</h5>
   </div>
 )
-
-const {readFileSync, promises: fsPromises} = require('fs');
-
 
 const adjectives_list = ["laser-beam", "blue-spotted", "polka-dot", "endangered", "very normal", "crazed", "psychopathic", "part-time", "full-time", "professional", "undercover", "stupid", "idiotic", "shitty", "incontinent"];
 const crimes_list = ["does drugs", "sells drugs", "buys drugs", "is a mafia boss", "possesses drugs", "hates children", "pees in public", "commits treason", "skips class", "runs over pigeons", "steals candy from children", "chews with his mouth open", "eats pickles with peanut butter", "drowns small children", "watches Fox News", "handles salmon under suspicious circumstances"]
