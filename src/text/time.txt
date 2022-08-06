@@ -1,0 +1,23 @@
+Picoseconds
+Yoctoseconds
+Jiffies
+Centuries
+Millenniums
+Eras
+Eons
+attoseconds
+nanoseconds
+seconds
+minutes
+millidays
+moments
+hours
+days
+weeks
+months
+lunar years
+Gregorian years
+olympiads
+decades
+gigaseconds
+galactic years
