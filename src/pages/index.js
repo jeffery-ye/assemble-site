@@ -15,7 +15,7 @@ const Home = () => {
       </div>
 
       <div class = "buttons">
-        <button type="submit" value="Search" onClick={onClick}>write</button>
+        <button type="submit" value="Search" onClick={onClick}>WRITE!</button>
         
       </div>
 
