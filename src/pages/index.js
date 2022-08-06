@@ -1,4 +1,5 @@
 import * as React from "react";
+import '../styles/main.css';
 
 const Home = () => {
   const [showGenerator, setShowGen] = React.useState(false)
@@ -7,19 +8,21 @@ const Home = () => {
     <div>
       <div class="heading">
         <h1>Uncommon App</h1>
-        <h4>subtext</h4>
       </div>
 
       <div class = "description">
-        <p>description</p>
+        <p>Write the worst college essay.</p>
+      </div>
+
+      <div class = "buttons">
+        <button type="submit" value="Search" onClick={onClick}>write</button>
+        
       </div>
 
       <hr/>
 
-      <div class = "buttons">
-        <button type="submit" value="Search" onClick={onClick}> hello </button>
-        { showGenerator ? <Generator /> : null }
-      </div>
+      { showGenerator ? <Generator /> : null }
+      
     </div>
   )
 }
