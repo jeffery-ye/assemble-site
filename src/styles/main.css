@@ -37,6 +37,10 @@ body {
     transition: .5s;
 }
 
+.submitButton:hover {
+    transform: scale(1.25);
+  }
+
 .buttons button:hover {
     background-color:#528fcb;
     text-shadow: 0 0 4px #fff;
