@@ -2,9 +2,10 @@ import * as React from "react";
 import '../styles/main.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
-  faCopy,
+  faCopy, faVolumeHigh
 } from '@fortawesome/free-solid-svg-icons'
 import ReactDOMServer from 'react-dom/server'
+import { useSpeechSynthesis } from "react-speech-kit";
 
 var iterations = -1;
 var fullEssay = ""
@@ -60,6 +61,7 @@ export class Generator extends React.Component {
             through. From that point on, I pulled my life together. I graduated high school with a { Math.floor(Math.random()*3) + "." + Math.floor(Math.random()*9) } GPA.
             I knew that I wanted to go to { getSnippet(school_list) } and become the best { getSnippet(job_list) } the world has ever seen. Hope to see you all on campus next fall!</p>
             <button class = "copyButton" onClick={getEssay}><FontAwesomeIcon icon={faCopy} size="1x" /></button>
+            <button class = "speakButton" onClick={Example}> <FontAwesomeIcon icon={faVolumeHigh} size="1x" /></button>
         </div>
       )
     }
@@ -131,4 +133,17 @@ function getEssay() {
   navigator.clipboard.writeText(fullEssay)
 }
 
+function getEssayText() {
+  fullEssay = document.getElementById("essayText").innerText;
+  fullEssay.replaceAll("&nbsp;","");
+  return fullEssay;
+}
+
+function Example() {
+  const { speak } = useSpeechSynthesis()
+  const text = getEssayText();
+  return (
+    <button onClick={() => speak({ text: text })}>Speak</button>
+  )
+}
 export default Home;
