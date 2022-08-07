@@ -42,6 +42,9 @@ export class Home extends React.Component {
 
         { this.state.visible ? <Generator /> : null }
         
+        <div class="footer">
+          <h3>Made with 💩 by Jeffery and Jasmina</h3>
+        </div>
       </div>
     )
   }
