@@ -63,3 +63,24 @@ hr {
     border-radius: 5px;
     overflow-wrap: break-word;
 }
+
+.copyButton {
+    font-size: 1.3rem;
+    padding: 5px 10px;
+    border: 1px transparent;
+    border-radius: 7px;
+    margin: 10px;
+    transition: .2s;
+    font-size: 20px;
+    color:aqua;
+    background: transparent;
+    outline: transparent;
+}
+
+.copyButton:hover {
+    transform: scale(1.5);
+}
+
+.copyButton:focus {     
+    color:darkcyan;    
+}
