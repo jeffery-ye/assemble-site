@@ -2,15 +2,16 @@ import * as React from "react";
 import '../styles/main.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
-  faCopy, faVolumeHigh
+  faCopy
 } from '@fortawesome/free-solid-svg-icons'
 import ReactDOMServer from 'react-dom/server'
-import { useSpeechSynthesis } from "react-speech-kit";
 
 var iterations = -1;
 var fullEssay = ""
 
 export class Home extends React.Component {
+
+  
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
@@ -46,7 +47,7 @@ export class Home extends React.Component {
   }
 }
 
-export class Generator extends React.Component {
+export class Generator extends React.Component {  
   render() {
     if(iterations % 3 === 0) {
       return (
@@ -61,7 +62,6 @@ export class Generator extends React.Component {
             through. From that point on, I pulled my life together. I graduated high school with a { Math.floor(Math.random()*3) + "." + Math.floor(Math.random()*9) } GPA.
             I knew that I wanted to go to { getSnippet(school_list) } and become the best { getSnippet(job_list) } the world has ever seen. Hope to see you all on campus next fall!</p>
             <button class = "copyButton" onClick={getEssay}><FontAwesomeIcon icon={faCopy} size="1x" /></button>
-            <button class = "speakButton" onClick={Example}> <FontAwesomeIcon icon={faVolumeHigh} size="1x" /></button>
         </div>
       )
     }
@@ -99,7 +99,7 @@ export class Generator extends React.Component {
 
 
 const adjectives_list = ["wanted-by-the-FBI", "chronically ill", "WHO watchlist member", "very normal", "hopped-up-on-amphetamines", "psychopathic", "part-time", "full-time", "professional", "undercover", "clinically insane", "incontinent", "endorsed-by-the-catholic-church"];
-const crimes_list = ["does drugs", "sells drugs", "is a mafia boss", "hates children", "urinates in public", "commits treason", "commits truancy", "runs over pigeons", "steals candy from children", "chews with their mouth open", "plays Genshin Impact", "commits drive-by baptizements", "watches Fox News", "handles salmon under suspicious circumstances"]
+const crimes_list = ["does drugs", "sells drugs", "is a mafia boss", "hates children", "urinates in public", "commits treason", "commits truancy", "runs over pigeons", "steals candy from children", "chews with their mouth open", "plays Genshin Impact", "commits drive-by baptisms", "watches Fox News", "handles salmon under suspicious circumstances"]
 const events_list = ["was hit by an intercontinental ballistic missile", "lived through a nuclear holocaust", "was forced to watch PragerU videos", "forgot to backup a database before accidentally deleting all of it", "pressed alt+f4 mid-game", "played League of Legends", "said “you too” to the waiter saying 'enjoy your food'", "was wrong on the internet", "talked about unionizing near an Amazon HR representative", "was shat on by a bird while wearing a suit", "was dropped from the 6th floor of the Phelan building", "was brined in pickle juice"]
 const issues_list = ["bad urban design", "climate change", "dog racism", "stroads", "poaching", "littering", "forest fires", "fires caused by exploding teslas", "microplastics", "Ronald Reagan", "fashion design", "trickle down economics", "copyright infringement", "invasive advertisements", "cryptocurrency", "NFTs", "microprocessor shortages"]
 const times_list = ["Picoseconds", "Jiffies", "Centuries", "Millenniums", "Eras", "Eons", "nanoseconds", "seconds", "minutes", "millidays", "hours", "days", "weeks", "months", "lunar years", "decades", "gigaseconds"]
@@ -139,11 +139,4 @@ function getEssayText() {
   return fullEssay;
 }
 
-function Example() {
-  const { speak } = useSpeechSynthesis()
-  const text = getEssayText();
-  return (
-    <button onClick={() => speak({ text: text })}>Speak</button>
-  )
-}
 export default Home;
